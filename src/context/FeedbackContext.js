@@ -39,13 +39,13 @@ export const FeedbackProvider = ({ children }) => {
     // Delete feedback item
     const deleteFeedback = (id) => {
         if(window.confirm('Are you sure you want to delete?')){
-          setFeedback(feedback.filter((item) => {
+          setFeedback(feedback.filter((item) => { 
             return item.id !== id
           }))
         }
     }
 
-    // Set item to be updated
+    // Set item to be updated in the FeedbackForm
     const editFeedback = (item) => {
         setFeedbackEdit({
             item: item,
@@ -53,7 +53,7 @@ export const FeedbackProvider = ({ children }) => {
         })
     }
 
-    // Update feedback item
+    // Update feedback item that is chosen with the editFeedback function
     const updateFeedback = (id, updItem) => {
         setFeedback(feedback.map((item) => item.id === id ? {...item, ...updItem } : item))
     }
